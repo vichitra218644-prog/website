@@ -19,7 +19,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, '..');
 
-const SITE_URL = process.env.SITE_URL || process.env.VITE_SITE_URL || 'https://applicationwala.in';
+const SITE_URL = process.env.SITE_URL || process.env.VITE_SITE_URL || 'https://applicationwala.com';
 
 const staticRoutes = [
   '/',
