@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload media “{{path}}”"
+    deleteMedia: "Delete media “{{path}}”"
+
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description (SEO meta)", name: "description", widget: "string" }
+      - { label: "Keywords (comma-separated)", name: "keywords", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "ApplicationWala Team" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    delete: false
+    create: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/pages/home.json"
+        fields:
+          - { label: "Badge Text", name: "badge", widget: "string" }
+          - { label: "Hero Title (before highlight)", name: "heroTitleBefore", widget: "string" }
+          - { label: "Hero Highlight 1 (English)", name: "heroHighlight1", widget: "string" }
+          - { label: "Hero Title (middle)", name: "heroTitleMiddle", widget: "string" }
+          - { label: "Hero Highlight 2 (Hindi)", name: "heroHighlight2", widget: "string" }
+          - { label: "Hero Title (after highlight)", name: "heroTitleAfter", widget: "string" }
+          - { label: "Hero Description", name: "heroDescription", widget: "text" }
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            min: 1
+            max: 6
+            fields:
+              - { label: "Icon", name: "icon", widget: "select", options: ["FileText", "Languages", "Download"], default: "FileText" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "string" }
