@@ -2,11 +2,11 @@ backend:
   name: git-gateway
   branch: main
   commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
-    uploadMedia: "Upload media “{{path}}”"
-    deleteMedia: "Delete media “{{path}}”"
+    create: "Create {{collection}} {{slug}}"
+    update: "Update {{collection}} {{slug}}"
+    delete: "Delete {{collection}} {{slug}}"
+    uploadMedia: "Upload media {{path}}"
+    deleteMedia: "Delete media {{path}}"
 
 local_backend: true
 
@@ -30,20 +30,27 @@ collections:
       - { label: "Author", name: "author", widget: "string", default: "ApplicationWala Team" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "pages"
-    label: "Pages"
+  - name: "settings"
+    label: "Site Settings"
     delete: false
     create: false
     files:
-      - label: "Home Page"
-        name: "home"
-        file: "content/pages/home.json"
+      - label: "Site Configuration"
+        name: "site"
+        file: "content/settings/site.json"
+        extension: "json"
+        format: "json"
         fields:
-          - { label: "Badge Text", name: "badge", widget: "string" }
-          - { label: "Hero Title (before highlight)", name: "heroTitleBefore", widget: "string" }
+          - { label: "Brand Name", name: "brandName", widget: "string", default: "ApplicationWala" }
+          - { label: "Brand Suffix (highlighted part)", name: "brandSuffix", widget: "string", default: "Wala" }
+          - { label: "Brand Accent Color", name: "brandAccentColor", widget: "color", default: "#f97316" }
+          - { label: "Hero Badge Text", name: "heroBadge", widget: "string" }
+          - { label: "Hero Title (before highlight 1)", name: "heroTitleBefore", widget: "string" }
           - { label: "Hero Highlight 1 (English)", name: "heroHighlight1", widget: "string" }
+          - { label: "Hero Highlight 1 Color", name: "heroHighlight1Color", widget: "color", default: "#2563eb" }
           - { label: "Hero Title (middle)", name: "heroTitleMiddle", widget: "string" }
           - { label: "Hero Highlight 2 (Hindi)", name: "heroHighlight2", widget: "string" }
+          - { label: "Hero Highlight 2 Color", name: "heroHighlight2Color", widget: "color", default: "#16a34a" }
           - { label: "Hero Title (after highlight)", name: "heroTitleAfter", widget: "string" }
           - { label: "Hero Description", name: "heroDescription", widget: "text" }
           - label: "Features"
@@ -55,3 +62,36 @@ collections:
               - { label: "Icon", name: "icon", widget: "select", options: ["FileText", "Languages", "Download"], default: "FileText" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "desc", widget: "string" }
+          - { label: "Primary Color (theme)", name: "primaryColor", widget: "color", default: "#2563eb" }
+          - { label: "Secondary Color (theme)", name: "secondaryColor", widget: "color", default: "#16a34a" }
+          - label: "Header Navigation Links"
+            name: "navLinks"
+            widget: "list"
+            min: 1
+            max: 10
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL Path", name: "to", widget: "string" }
+          - { label: "CTA Button Label", name: "ctaLabel", widget: "string", default: "Generate Letter" }
+          - { label: "Footer Tagline", name: "footerTagline", widget: "text" }
+          - { label: "Footer Copyright Text", name: "footerCopyright", widget: "string", default: "All rights reserved." }
+          - { label: "Footer Made With Text", name: "footerMadeWith", widget: "string", default: "Made with love for Indian banking customers" }
+          - label: "Social Media Links"
+            name: "socialLinks"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Footer Quick Info"
+            name: "footerQuickInfo"
+            widget: "list"
+            required: false
+            field: { label: "Info Text", name: "info", widget: "string" }
+          - label: "Footer Legal Links"
+            name: "footerLegalLinks"
+            widget: "list"
+            min: 1
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL Path", name: "to", widget: "string" }

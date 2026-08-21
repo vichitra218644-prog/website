@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Landmark, Menu, X } from 'lucide-react';
-
-const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
-];
+import { siteSettings } from '@/lib/settings';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const { brandName, brandSuffix, navLinks, ctaLabel } = siteSettings;
 
   const scrollToGenerator = () => {
     setOpen(false);
@@ -35,7 +30,8 @@ export default function Header() {
           </div>
           <div className="flex flex-col leading-none">
             <span className="text-base font-extrabold tracking-tight text-bank-900">
-              Application<span className="text-accent-orange">Wala</span>
+              {brandName.replace(brandSuffix, '')}
+              <span className="text-accent-orange">{brandSuffix}</span>
             </span>
             <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
               Bank Letter Generator
@@ -64,7 +60,7 @@ export default function Header() {
             onClick={scrollToGenerator}
             className="ml-2 rounded-lg bg-bank-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-bank-700"
           >
-            Generate Letter
+            {ctaLabel}
           </button>
         </nav>
 
@@ -99,7 +95,7 @@ export default function Header() {
             onClick={scrollToGenerator}
             className="mt-1 block w-full rounded-lg bg-bank-600 px-4 py-2.5 text-center text-sm font-semibold text-white"
           >
-            Generate Letter
+            {ctaLabel}
           </button>
         </nav>
       )}

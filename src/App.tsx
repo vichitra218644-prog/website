@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,8 +11,14 @@ import AboutUs from '@/pages/AboutUs';
 import ContactUs from '@/pages/ContactUs';
 import Blog from '@/pages/Blog';
 import BlogPostPage from '@/pages/BlogPostPage';
+import { siteSettings } from '@/lib/settings';
+import { applyTheme } from '@/utils/theme';
 
 export default function App() {
+  useEffect(() => {
+    applyTheme(siteSettings);
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="flex min-h-screen flex-col bg-white">
