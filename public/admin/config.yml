@@ -1,12 +1,6 @@
 backend:
   name: git-gateway
   branch: main
-  commit_messages:
-    create: "Create {{collection}} {{slug}}"
-    update: "Update {{collection}} {{slug}}"
-    delete: "Delete {{collection}} {{slug}}"
-    uploadMedia: "Upload media {{path}}"
-    deleteMedia: "Delete media {{path}}"
 
 local_backend: true
 
@@ -24,8 +18,8 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description (SEO meta)", name: "description", widget: "string" }
-      - { label: "Keywords (comma-separated)", name: "keywords", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Keywords", name: "keywords", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string", default: "ApplicationWala Team" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -41,17 +35,17 @@ collections:
         extension: "json"
         format: "json"
         fields:
-          - { label: "Brand Name", name: "brandName", widget: "string", default: "ApplicationWala" }
-          - { label: "Brand Suffix (highlighted part)", name: "brandSuffix", widget: "string", default: "Wala" }
-          - { label: "Brand Accent Color", name: "brandAccentColor", widget: "color", default: "#f97316" }
-          - { label: "Hero Badge Text", name: "heroBadge", widget: "string" }
-          - { label: "Hero Title (before highlight 1)", name: "heroTitleBefore", widget: "string" }
-          - { label: "Hero Highlight 1 (English)", name: "heroHighlight1", widget: "string" }
-          - { label: "Hero Highlight 1 Color", name: "heroHighlight1Color", widget: "color", default: "#2563eb" }
-          - { label: "Hero Title (middle)", name: "heroTitleMiddle", widget: "string" }
-          - { label: "Hero Highlight 2 (Hindi)", name: "heroHighlight2", widget: "string" }
-          - { label: "Hero Highlight 2 Color", name: "heroHighlight2Color", widget: "color", default: "#16a34a" }
-          - { label: "Hero Title (after highlight)", name: "heroTitleAfter", widget: "string" }
+          - { label: "Brand Name", name: "brandName", widget: "string" }
+          - { label: "Brand Suffix", name: "brandSuffix", widget: "string" }
+          - { label: "Brand Accent Color", name: "brandAccentColor", widget: "color" }
+          - { label: "Hero Badge", name: "heroBadge", widget: "string" }
+          - { label: "Hero Title Before", name: "heroTitleBefore", widget: "string" }
+          - { label: "Hero Highlight 1", name: "heroHighlight1", widget: "string" }
+          - { label: "Hero Highlight 1 Color", name: "heroHighlight1Color", widget: "color" }
+          - { label: "Hero Title Middle", name: "heroTitleMiddle", widget: "string" }
+          - { label: "Hero Highlight 2", name: "heroHighlight2", widget: "string" }
+          - { label: "Hero Highlight 2 Color", name: "heroHighlight2Color", widget: "color" }
+          - { label: "Hero Title After", name: "heroTitleAfter", widget: "string" }
           - { label: "Hero Description", name: "heroDescription", widget: "text" }
           - label: "Features"
             name: "features"
@@ -59,24 +53,24 @@ collections:
             min: 1
             max: 6
             fields:
-              - { label: "Icon", name: "icon", widget: "select", options: ["FileText", "Languages", "Download"], default: "FileText" }
+              - { label: "Icon", name: "icon", widget: "select", options: ["FileText", "Languages", "Download"] }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "desc", widget: "string" }
-          - { label: "Primary Color (theme)", name: "primaryColor", widget: "color", default: "#2563eb" }
-          - { label: "Secondary Color (theme)", name: "secondaryColor", widget: "color", default: "#16a34a" }
-          - label: "Header Navigation Links"
+          - { label: "Primary Color", name: "primaryColor", widget: "color" }
+          - { label: "Secondary Color", name: "secondaryColor", widget: "color" }
+          - label: "Navigation Links"
             name: "navLinks"
             widget: "list"
             min: 1
             max: 10
             fields:
               - { label: "Label", name: "label", widget: "string" }
-              - { label: "URL Path", name: "to", widget: "string" }
-          - { label: "CTA Button Label", name: "ctaLabel", widget: "string", default: "Generate Letter" }
+              - { label: "Path", name: "to", widget: "string" }
+          - { label: "CTA Label", name: "ctaLabel", widget: "string" }
           - { label: "Footer Tagline", name: "footerTagline", widget: "text" }
-          - { label: "Footer Copyright Text", name: "footerCopyright", widget: "string", default: "All rights reserved." }
-          - { label: "Footer Made With Text", name: "footerMadeWith", widget: "string", default: "Made with love for Indian banking customers" }
-          - label: "Social Media Links"
+          - { label: "Footer Copyright", name: "footerCopyright", widget: "string" }
+          - { label: "Footer Made With", name: "footerMadeWith", widget: "string" }
+          - label: "Social Links"
             name: "socialLinks"
             widget: "list"
             required: false
@@ -87,11 +81,11 @@ collections:
             name: "footerQuickInfo"
             widget: "list"
             required: false
-            field: { label: "Info Text", name: "info", widget: "string" }
+            field: { label: "Info", name: "info", widget: "string" }
           - label: "Footer Legal Links"
             name: "footerLegalLinks"
             widget: "list"
             min: 1
             fields:
               - { label: "Label", name: "label", widget: "string" }
-              - { label: "URL Path", name: "to", widget: "string" }
+              - { label: "Path", name: "to", widget: "string" }
