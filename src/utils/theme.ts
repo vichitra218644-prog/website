@@ -1,4 +1,5 @@
 import type { SiteSettings } from '@/lib/settings';
+import { homeContent } from '@/lib/pages';
 
 function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
   const cleaned = hex.replace('#', '');
@@ -86,8 +87,8 @@ export function applyTheme(settings: SiteSettings): void {
   root.style.setProperty('--color-secondary-700', secondary[700]);
 
   root.style.setProperty('--color-accent', settings.brandAccentColor);
-  root.style.setProperty('--color-hero-highlight-1', settings.heroHighlight1Color);
-  root.style.setProperty('--color-hero-highlight-2', settings.heroHighlight2Color);
+  root.style.setProperty('--color-hero-highlight-1', homeContent.heroHighlight1Color);
+  root.style.setProperty('--color-hero-highlight-2', homeContent.heroHighlight2Color);
 }
 
 export { darken, lighten };

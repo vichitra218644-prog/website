@@ -24,11 +24,49 @@ collections:
       - { label: "Author", name: "author", widget: "string", default: "ApplicationWala Team" }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  - name: "legal_pages"
+    label: "Legal & Info Pages"
+    folder: "content/pages"
+    create: false
+    delete: false
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Page Title", name: "title", widget: "string" }
+      - { label: "Last Updated", name: "lastUpdated", widget: "string" }
+      - { label: "Page Body", name: "body", widget: "markdown" }
+
   - name: "settings"
     label: "Site Settings"
     delete: false
     create: false
     files:
+      - label: "Homepage Content"
+        name: "homepage"
+        file: "content/pages/home.json"
+        extension: "json"
+        format: "json"
+        fields:
+          - { label: "Hero Badge", name: "heroBadge", widget: "string" }
+          - { label: "Hero Title (before highlight 1)", name: "heroTitleBefore", widget: "string" }
+          - { label: "Hero Highlight 1", name: "heroHighlight1", widget: "string" }
+          - { label: "Hero Highlight 1 Color", name: "heroHighlight1Color", widget: "color" }
+          - { label: "Hero Title (middle)", name: "heroTitleMiddle", widget: "string" }
+          - { label: "Hero Highlight 2", name: "heroHighlight2", widget: "string" }
+          - { label: "Hero Highlight 2 Color", name: "heroHighlight2Color", widget: "color" }
+          - { label: "Hero Title (after highlight)", name: "heroTitleAfter", widget: "string" }
+          - { label: "Hero Description", name: "heroDescription", widget: "text" }
+          - label: "Feature Boxes"
+            name: "features"
+            widget: "list"
+            min: 1
+            max: 6
+            fields:
+              - { label: "Icon", name: "icon", widget: "select", options: ["FileText", "Languages", "Download"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "string" }
+
       - label: "Site Configuration"
         name: "site"
         file: "content/settings/site.json"
@@ -38,24 +76,6 @@ collections:
           - { label: "Brand Name", name: "brandName", widget: "string" }
           - { label: "Brand Suffix", name: "brandSuffix", widget: "string" }
           - { label: "Brand Accent Color", name: "brandAccentColor", widget: "color" }
-          - { label: "Hero Badge", name: "heroBadge", widget: "string" }
-          - { label: "Hero Title Before", name: "heroTitleBefore", widget: "string" }
-          - { label: "Hero Highlight 1", name: "heroHighlight1", widget: "string" }
-          - { label: "Hero Highlight 1 Color", name: "heroHighlight1Color", widget: "color" }
-          - { label: "Hero Title Middle", name: "heroTitleMiddle", widget: "string" }
-          - { label: "Hero Highlight 2", name: "heroHighlight2", widget: "string" }
-          - { label: "Hero Highlight 2 Color", name: "heroHighlight2Color", widget: "color" }
-          - { label: "Hero Title After", name: "heroTitleAfter", widget: "string" }
-          - { label: "Hero Description", name: "heroDescription", widget: "text" }
-          - label: "Features"
-            name: "features"
-            widget: "list"
-            min: 1
-            max: 6
-            fields:
-              - { label: "Icon", name: "icon", widget: "select", options: ["FileText", "Languages", "Download"] }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "desc", widget: "string" }
           - { label: "Primary Color", name: "primaryColor", widget: "color" }
           - { label: "Secondary Color", name: "secondaryColor", widget: "color" }
           - label: "Navigation Links"

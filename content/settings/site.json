@@ -2,32 +2,6 @@
   "brandName": "ApplicationWala",
   "brandSuffix": "Wala",
   "brandAccentColor": "#f97316",
-  "heroBadge": "Free Bank Application Letter Generator",
-  "heroTitleBefore": "Generate Bank Application Letters in",
-  "heroHighlight1": "English",
-  "heroHighlight1Color": "#2563eb",
-  "heroTitleMiddle": "&",
-  "heroHighlight2": "Hindi",
-  "heroHighlight2Color": "#16a34a",
-  "heroTitleAfter": "— Instantly",
-  "heroDescription": "Fill in your details, preview your letter live, and download a clean text-based PDF. Works for SBI, HDFC, PNB, ICICI and all Indian banks.",
-  "features": [
-    {
-      "icon": "FileText",
-      "title": "10 Application Types",
-      "desc": "Passbook, ATM block, chequebook, statement, mobile change & more"
-    },
-    {
-      "icon": "Languages",
-      "title": "English & Hindi",
-      "desc": "Toggle between languages with formal, grammatically correct Hindi"
-    },
-    {
-      "icon": "Download",
-      "title": "Text-Based PDF",
-      "desc": "Lightweight, vector PDFs — not scanned images. Under 50KB."
-    }
-  ],
   "primaryColor": "#2563eb",
   "secondaryColor": "#16a34a",
   "navLinks": [

@@ -18,15 +18,6 @@ export interface SiteSettings {
   brandName: string;
   brandSuffix: string;
   brandAccentColor: string;
-  heroBadge: string;
-  heroTitleBefore: string;
-  heroHighlight1: string;
-  heroHighlight1Color: string;
-  heroTitleMiddle: string;
-  heroHighlight2: string;
-  heroHighlight2Color: string;
-  heroTitleAfter: string;
-  heroDescription: string;
   features: Feature[];
   primaryColor: string;
   secondaryColor: string;
@@ -46,15 +37,6 @@ const fallback: SiteSettings = {
   brandName: 'ApplicationWala',
   brandSuffix: 'Wala',
   brandAccentColor: '#f97316',
-  heroBadge: 'Free Bank Application Letter Generator',
-  heroTitleBefore: 'Generate Bank Application Letters in',
-  heroHighlight1: 'English',
-  heroHighlight1Color: '#2563eb',
-  heroTitleMiddle: '&',
-  heroHighlight2: 'Hindi',
-  heroHighlight2Color: '#16a34a',
-  heroTitleAfter: '— Instantly',
-  heroDescription: 'Fill in your details, preview your letter live, and download a clean text-based PDF.',
   features: [],
   primaryColor: '#2563eb',
   secondaryColor: '#16a34a',

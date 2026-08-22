@@ -1,14 +1,30 @@
 import { Sparkles } from 'lucide-react';
 import GeneratorTool from '@/components/GeneratorTool';
 import BankingGuide from '@/components/BankingGuide';
-import { siteSettings } from '@/lib/settings';
+import { homeContent } from '@/lib/pages';
 import { getFeatureIcon } from '@/utils/icons';
+import Seo from '@/components/Seo';
 
 export default function Home() {
-  const { heroBadge, heroTitleBefore, heroHighlight1, heroTitleMiddle, heroHighlight2, heroTitleAfter, heroDescription, features } = siteSettings;
+  const {
+    heroBadge,
+    heroTitleBefore,
+    heroHighlight1,
+    heroTitleMiddle,
+    heroHighlight2,
+    heroTitleAfter,
+    heroDescription,
+    features,
+  } = homeContent;
 
   return (
     <>
+      <Seo
+        title="ApplicationWala - Bank Application Letter Generator (English & Hindi)"
+        description={heroDescription}
+        keywords="bank application, SBI application, HDFC application, ATM block application, passbook lost application, chequebook cancellation, bank statement application, Hindi bank application"
+      />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-bank-50 via-white to-white">
         <div className="absolute inset-0 -z-10">
