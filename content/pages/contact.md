@@ -1,17 +1,16 @@
 ---
-title: "Contact Us"
-lastUpdated: "August 12, 2026"
+title: Contact Us
+lastUpdated: August 12, 2026
 ---
-
 We value your feedback, suggestions, and questions. Whether you have a request for a new application type, found a bug, or simply want to share your experience with ApplicationWala, we would love to hear from you.
 
 ## Get in Touch
 
 You can reach us through any of the following channels:
 
-- **Email:** support@applicationwala.com
-- **Feedback Form:** Please use the email above with the subject line "Feedback" or "Suggestion".
-- **Bug Reports:** Kindly include a description of the issue and the browser you are using.
+* **Email:** vichitra218644@gmail.com
+* **Feedback Form:** Please use the email above with the subject line "Feedback" or "Suggestion".
+* **Bug Reports:** Kindly include a description of the issue and the browser you are using.
 
 ## Response Time
 
@@ -19,10 +18,10 @@ We aim to respond to all inquiries within 2-3 business days. Please be patient d
 
 ## What to Include in Your Message
 
-- Your name and a valid email address for us to reply to.
-- A clear subject line describing your query.
-- Details of your feedback, suggestion, or the issue you encountered.
-- If reporting a bug, the steps to reproduce it and screenshots if possible.
+* Your name and a valid email address for us to reply to.
+* A clear subject line describing your query.
+* Details of your feedback, suggestion, or the issue you encountered.
+* If reporting a bug, the steps to reproduce it and screenshots if possible.
 
 ## Requesting New Application Types
 
